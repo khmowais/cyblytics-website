@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - Cyblytics Lab</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <img src="images/fast-logo.png" alt="FAST Logo">
+        <h1 style="
+      background: linear-gradient(to right, #4fc3f7, #ff3b3b); /* Light blue to vibrant red */
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: inline-block;
+    ">
+      Cyblytics Research Lab
+    </h1>
+
+    <img src="images/cyblytics-logo.png" alt="Cyblytics Logo">
+    <button class="nav-toggle" onclick="document.querySelector('nav').classList.toggle('show')">☰</button>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="team.html">Team</a>
+    <a href="publications.html">Publications</a>
+    <a href="events.html">Events</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <main>
+    <section class="section visible">
+      <h2>Contact Us</h2>
+      <div class="card">
+        <form action="form-handler.php" method="POST" class="contact-form">
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="email" placeholder="Your Email" required>
+          <input type="text" name="subject" placeholder="Subject" required> 
+          <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+
+
+
+
+
+
+
+      </div>
+    </section>
+
+    <section class="section visible">
+      <h3>Visit Us</h3>
+      <div class="card">
+        <p><strong>Location:</strong> FAST NUCES, A.K. Brohi Road, H-11/4, Islamabad, Pakistan</p>
+        <p><strong>Email:</strong> info@cyblytics.org</p>
+        <p><strong>Phone:</strong> +92 51 111 128 128</p>
+        <div style="width: 100%; height: 300px; margin-top: 20px;">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3322.2860078220887!2d73.01854811520796!3d33.651877980714846!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38df9510be78fdab%3A0xdad70c065a7d6f65!2sFAST%20NUCES%20Islamabad!5e0!3m2!1sen!2s!4v1621922326233!5m2!1sen!2s" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    &copy; 2025 Cyblytics Lab — School of Computer Science, FAST NUCES Islamabad<br>
+    <a href="https://linkedin.com/in/the-mohammad-owais">Site Built by Mohammad Owais</a>
+  </footer>
+  <script>
+document.querySelector('.contact-form').addEventListener('submit', function (e) {
+  e.preventDefault();
+  const form = e.target;
+
+  fetch(form.action, {
+    method: 'POST',
+    body: new FormData(form),
+  })
+  .then(response => response.json())
+  .then(data => {
+    const messageBox = document.createElement('div');
+    messageBox.className = 'card';
+    if (data.success) {
+      messageBox.innerHTML = `<h3>Thank you!</h3><p>Your message has been sent. We'll get back to you soon.</p>`;
+      form.replaceWith(messageBox);
+    } else {
+      messageBox.innerHTML = `<h3>Error</h3><p>${data.message || 'Something went wrong.'}</p>`;
+      form.parentNode.appendChild(messageBox);
+    }
+  })
+  .catch(error => {
+    alert("Something went wrong. Please try again later.");
+    console.error(error);
+  });
+});
+</script>
+
+</body>
+</html>

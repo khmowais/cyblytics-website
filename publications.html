@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Publications — Cyblytics Lab</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <img src="images/fast-logo.png" alt="FAST Logo">
+        <h1 style="
+      background: linear-gradient(to right, #4fc3f7, #ff3b3b); /* Light blue to vibrant red */
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: inline-block;
+    ">
+      Cyblytics Research Lab
+    </h1>
+
+    <img src="images/cyblytics-logo.png" alt="Cyblytics Logo">
+    <button class="nav-toggle" onclick="document.querySelector('nav').classList.toggle('show')">☰</button>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="team.html">Team</a>
+    <a href="publications.html">Publications</a>
+    <a href="events.html">Events</a>
+    <a href="contact.html">Contact</a>    
+  </nav>
+
+  <main>
+    <section class="section">
+      <h2>Recent Publications</h2>
+
+      <div class="card">
+        <h4>Federated Learning for Edge AI</h4>
+        <p>Ayesha Khan, Fatima Rasheed — <em>IEEE Internet of Things Journal, 2024</em></p>
+        <p>This paper explores resource-efficient federated learning algorithms adapted for real-time edge AI applications in smart cities.</p>
+      </div>
+
+      <div class="card">
+        <h4>Securing IoT Networks with Lightweight Cryptography</h4>
+        <p>Umer Ahmed — <em>Journal of Cybersecurity and Digital Trust, 2024</em></p>
+        <p>Proposes and evaluates cryptographic frameworks suitable for resource-constrained IoT environments in critical infrastructure.</p>
+      </div>
+
+      <div class="card">
+        <h4>Hybrid Sensor Fusion for Smart Agriculture</h4>
+        <p>Fatima Rasheed et al. — <em>ACM Transactions on Sensor Networks, 2023</em></p>
+        <p>Presents a system using multi-sensor fusion and AI-driven control to improve water usage and yield in semi-arid farmlands.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Cyblytics Lab — FAST NUCES Islamabad<br>
+    <a href="https://linkedin.com/in/the-mohammad-owais">Site Built by Mohammad Owais</a>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll(".section").forEach((s) => {
+        s.classList.add("visible");
+      });
+    });
+  </script>
+</body>
+</html>

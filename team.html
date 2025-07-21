@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Team — Cyblytics Lab</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <style>
+    .team-section {
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .team-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .team-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .team-card img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+    }
+
+    .team-card h3 {
+      margin: 0.5rem 0;
+      font-size: 1.2rem;
+    }
+
+    .team-card p {
+      font-size: 0.95rem;
+      color: #444;
+    }
+
+    .team-links a {
+      margin: 0 8px;
+      font-size: 1.2rem;
+      color: #444;
+      text-decoration: none;
+    }
+
+    .team-links a:hover {
+      color: #0073e6;
+    }
+
+    @media (max-width: 600px) {
+      .team-card {
+        padding: 1rem;
+      }
+
+      .team-card img {
+        width: 100px;
+        height: 100px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="images/fast-logo.png" alt="FAST Logo">
+        <h1 style="
+      background: linear-gradient(to right, #4fc3f7, #ff3b3b); /* Light blue to vibrant red */
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: inline-block;
+    ">
+      Cyblytics Research Lab
+    </h1>
+
+    <img src="images/cyblytics-logo.png" alt="Cyblytics Logo">
+    <button class="nav-toggle" onclick="document.querySelector('nav').classList.toggle('show')">☰</button>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="team.html">Team</a>
+    <a href="publications.html">Publications</a>
+    <a href="events.html">Events</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <main>
+    <section class="section team-section">
+      <h2>Meet Our Team</h2>
+      <div class="team-grid">
+
+        <!-- Member 1 -->
+        <div class="team-card">
+          <img src="images/ayesha.jpg" alt="Dr. Ayesha Khan">
+          <h3>Dr. Ayesha Khan</h3>
+          <p>Lab Director, Associate Professor at FAST NUCES. Specializes in AI, Cybersecurity, and Edge Computing. Leads national R&D projects.</p>
+          <p><strong>Email:</strong> ayesha.khan@nu.edu.pk</p>
+          <div class="team-links">
+            <a href="https://www.linkedin.com/in/example" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://scholar.google.com/citations?user=example" target="_blank"><i class="fas fa-graduation-cap"></i></a>
+          </div>
+        </div>
+
+        <!-- Member 2 -->
+        <div class="team-card">
+          <img src="images/umer.jpg" alt="Umer Ahmed">
+          <h3>Umer Ahmed</h3>
+          <p>Research Associate. Works on embedded systems, robotics, and smart sensing platforms.</p>
+          <div class="team-links">
+            <a href="https://www.linkedin.com/in/example" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/example" target="_blank"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+
+        <!-- Member 3 -->
+        <div class="team-card">
+          <img src="images/fatima.jpg" alt="Fatima Rasheed">
+          <h3>Fatima Rasheed</h3>
+          <p>Machine Learning Engineer. Focused on NLP, deep learning, and AI for healthcare and social impact.</p>
+          <div class="team-links">
+            <a href="https://www.linkedin.com/in/example" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/example" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://scholar.google.com/citations?user=example" target="_blank"><i class="fas fa-graduation-cap"></i></a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Cyblytics Lab — FAST NUCES Islamabad <br>
+    <a href="https://linkedin.com/in/the-mohammad-owais">Site Built by Mohammad Owais</a>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll(".section").forEach((s) => s.classList.add("visible"));
+    });
+  </script>
+</body>
+</html>
